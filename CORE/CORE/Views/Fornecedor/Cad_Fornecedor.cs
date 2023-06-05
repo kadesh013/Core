@@ -56,7 +56,9 @@ namespace CORE.Views.Fornecedor
                         mfornecedor.Razao_social = txt_razao_social.Text;
                         mfornecedor.Nome_fantasia = txt_nome_fantasia.Text;
                         mfornecedor.Datacadastro = DateTime.Now;
-                       }
+
+                mfornecedor.Inserir();
+            }
             //Validacao
             /*  if(mfornecedor!=null) // verifica se algum atributo do fornecedor está nulo
                {
