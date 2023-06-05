@@ -49,7 +49,7 @@ namespace CORE.Views.Fornecedor
             var resultados = vf.Validate(mfornecedor);
 
             //Validacao
-            if (mfornecedor!=null) // verifica se algum atributo do fornecedor está nulo
+            if (mfornecedor!=null) 
                {
 
                   
@@ -61,15 +61,17 @@ namespace CORE.Views.Fornecedor
                            MessageBox.Show(erro.ErrorMessage);
                            return;
                        }
-                    MessageBox.Show(resultados.ToString());
-                    MessageBox.Show("Ruim");
+              //      MessageBox.Show(resultados.ToString());
+              //      MessageBox.Show("Ruim");
 
                 }
                 else
                    {
-                    MessageBox.Show("Inserindo");
 
                     mfornecedor.Inserir();
+                    MessageBox.Show("Cadastrado com sucesso!");
+
+                   
                    }
 
         }
