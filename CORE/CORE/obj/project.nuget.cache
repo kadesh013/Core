@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Bja316CpZnNCtku7WFpVmPYnwjBBUyII5bQMKDUHdGrmm25U1mqRb1cfc0Lzx9iQgSK4eIV1GY7FPe+yepY58w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Paulo\\source\\repos\\CORE\\CORE\\CORE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Paulo\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
+    "C:\\Users\\Paulo\\.nuget\\packages\\mysqlconnector\\2.2.6\\mysqlconnector.2.2.6.nupkg.sha512"
+  ],
+  "logs": []
+}
