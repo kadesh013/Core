@@ -1,12 +1,15 @@
 ﻿using CORE.Controllers;
 using CORE.Models;
 using FluentValidation.TestHelper;
+using MySqlConnector;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +19,15 @@ namespace CORE.Views.Fornecedor
     public partial class Cad_Fornecedor : Form
     {
         Models.Fornecedor forn = new Models.Fornecedor();
+
         public Cad_Fornecedor()
         {
             InitializeComponent();
 
         }
+
+  
+       
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -29,7 +36,7 @@ namespace CORE.Views.Fornecedor
 
         private void Cad_Fornecedor_Load(object sender, EventArgs e)
         {
-
+            dtg_cad_fornecedor.DataSource = forn.Carregadados();
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -39,7 +46,7 @@ namespace CORE.Views.Fornecedor
 
         private void btn_adicionar_Click(object sender, EventArgs e)
         {
-            
+
             Models.Fornecedor mfornecedor = new Models.Fornecedor();
             ValidacaoFornecedor vf = new ValidacaoFornecedor();
             mfornecedor.Codigo = int.Parse(txt_codigo.Text);
@@ -49,32 +56,32 @@ namespace CORE.Views.Fornecedor
             var resultados = vf.Validate(mfornecedor);
 
             //Validacao
-            if (mfornecedor!=null) 
-               {
+            if (mfornecedor != null)
+            {
 
-                  
-                   if(resultados!=null && resultados.ToString() != "") 
-                   {
-                       foreach (var erro in resultados.Errors)
-                       {
+
+                if (resultados != null && resultados.ToString() != "")
+                {
+                    foreach (var erro in resultados.Errors)
+                    {
                         MessageBox.Show(resultados.ToString());
-                           MessageBox.Show(erro.ErrorMessage);
-                           return;
-                       }
-              //      MessageBox.Show(resultados.ToString());
-              //      MessageBox.Show("Ruim");
+                        MessageBox.Show(erro.ErrorMessage);
+                        return;
+                    }
+                    //      MessageBox.Show(resultados.ToString());
+                    //      MessageBox.Show("Ruim");
 
                 }
                 else
-                   {
+                {
 
                     mfornecedor.Inserir();
                     MessageBox.Show("Cadastrado com sucesso!");
 
-                   
-                   }
 
-        }
+                }
+
+            }
 
 
         }
@@ -89,6 +96,11 @@ namespace CORE.Views.Fornecedor
             Conexao c = new Conexao();
             c.connect();
         }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
-    }
+}
 

@@ -107,6 +107,7 @@
             btn_editar.TabIndex = 4;
             btn_editar.Text = "EDITAR";
             btn_editar.UseVisualStyleBackColor = true;
+            btn_editar.Click += btn_editar_Click;
             // 
             // btn_adicionar
             // 

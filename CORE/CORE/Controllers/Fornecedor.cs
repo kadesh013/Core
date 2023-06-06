@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
-
+using System.Data;
 
 namespace CORE.Controllers
 {
@@ -114,6 +114,20 @@ namespace CORE.Controllers
         {
 
         }
+        public DataTable Carregadados()
+        {
+            string sql = "select * from tb_fornecedor";
+            MySqlConnection con = new MySqlConnection("server=localhost;User Id=root;database=db_core; password=");
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            DataTable data = new DataTable();
+            data.Load(cmd.ExecuteReader());
+            con.Close();
+            con.Dispose();
+            return data;
 
+        }
+
+       
     }
 }
