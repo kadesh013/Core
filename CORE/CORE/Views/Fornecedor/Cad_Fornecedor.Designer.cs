@@ -88,6 +88,7 @@
             btn_confirmar.TabIndex = 5;
             btn_confirmar.Text = "CONFIRMAR";
             btn_confirmar.UseVisualStyleBackColor = true;
+            btn_confirmar.Click += btn_confirmar_Click;
             // 
             // btn_excluir
             // 

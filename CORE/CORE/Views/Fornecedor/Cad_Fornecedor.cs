@@ -26,8 +26,8 @@ namespace CORE.Views.Fornecedor
 
         }
 
-  
-       
+
+
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -99,8 +99,40 @@ namespace CORE.Views.Fornecedor
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-          
+
         }
+
+        private void btn_confirmar_Click(object sender, EventArgs e)
+        {
+           
+            MessageBox.Show(Carrega());
+        }
+        public string Carrega()
+        {
+            ArrayList ar1 = new ArrayList();
+            string acumula = "";
+            int i = 0;
+            MySqlDataReader dr = null;
+            string sql = "select * from tb_fornecedor";
+            MySqlConnection con = new MySqlConnection("server=localhost;User Id=root;database=db_core; password=");
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+
+          
+                ar1.Add(dr.GetValue(i));
+               
+                MessageBox.Show(ar1[i].ToString());
+                i++;
+            }
+            con.Close();
+            con.Dispose();
+            return acumula="";
+
+        }
+
     }
 }
 
