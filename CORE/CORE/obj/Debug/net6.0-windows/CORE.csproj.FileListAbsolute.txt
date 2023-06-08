@@ -70,3 +70,4 @@ C:\Users\Paulo\source\repos\CORE\Core\CORE\CORE\obj\Debug\net6.0-windows\refint\
 C:\Users\Paulo\source\repos\CORE\Core\CORE\CORE\obj\Debug\net6.0-windows\CORE.pdb
 C:\Users\Paulo\source\repos\CORE\Core\CORE\CORE\obj\Debug\net6.0-windows\CORE.genruntimeconfig.cache
 C:\Users\Paulo\source\repos\CORE\Core\CORE\CORE\obj\Debug\net6.0-windows\ref\CORE.dll
+C:\Users\ALPER\Desktop\Core\Core\CORE\CORE\obj\Debug\net6.0-windows\CORE.Views.Funcionalidades.Cryptog.resources

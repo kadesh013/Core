@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "j8olrWzsmWNRxkYQ28+Yp76GRFm/fMUFAvxQLPo5MKeBnjePAeI5pn0hLY+26xSQu1OkyZeWFvdRTQ+k+n+JKg==",
+  "dgSpecHash": "nAB7KLc7N1u5egI9BRH7zapGtUfthOlBYcrdTNBt32n7r6ybQAuHVzoqH0itKcuHKsdSOSLYDanEjcUnNBejJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Paulo\\source\\repos\\CORE\\Core\\CORE\\CORE\\CORE.csproj",
+  "projectFilePath": "C:\\Users\\ALPER\\Desktop\\Core\\Core\\CORE\\CORE\\CORE.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Paulo\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
-    "C:\\Users\\Paulo\\.nuget\\packages\\mysqlconnector\\2.2.6\\mysqlconnector.2.2.6.nupkg.sha512"
+    "C:\\Users\\ALPER\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
+    "C:\\Users\\ALPER\\.nuget\\packages\\mysqlconnector\\2.2.6\\mysqlconnector.2.2.6.nupkg.sha512"
   ],
   "logs": []
 }

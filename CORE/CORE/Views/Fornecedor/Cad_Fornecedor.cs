@@ -74,7 +74,7 @@ namespace CORE.Views.Fornecedor
                 }
                 else
                 {
-
+                   
                     mfornecedor.Inserir();
                     MessageBox.Show("Cadastrado com sucesso!");
 
@@ -93,8 +93,8 @@ namespace CORE.Views.Fornecedor
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Conexao c = new Conexao();
-            c.connect();
+          
+
         }
 
         private void btn_editar_Click(object sender, EventArgs e)

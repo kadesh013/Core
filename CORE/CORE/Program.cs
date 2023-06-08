@@ -11,7 +11,7 @@ namespace CORE
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Views.Fornecedor.Cad_Fornecedor());
+            Application.Run(new Views.Funcionalidades.Cryptog());
         }
     }
 }

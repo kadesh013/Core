@@ -117,7 +117,12 @@ namespace CORE.Controllers
         }
         public DataTable Carregadados()
         {
-            string sql = "select * from tb_fornecedor";
+            string sql = @"SELECT 
+cd_fornecedor AS 'Codigo', 
+nm_razao_social AS 'Razao Social',
+nm_fantasia AS 'Nome Fantasia' 
+
+FROM tb_fornecedor;";
             MySqlConnection con = new MySqlConnection("server=localhost;User Id=root;database=db_core; password=");
             con.Open();
             MySqlCommand cmd = new MySqlCommand(sql, con);

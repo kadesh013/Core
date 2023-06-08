@@ -156,9 +156,16 @@
             // 
             // dtg_cad_fornecedor
             // 
+            dtg_cad_fornecedor.AllowUserToAddRows = false;
+            dtg_cad_fornecedor.AllowUserToDeleteRows = false;
+            dtg_cad_fornecedor.AllowUserToOrderColumns = true;
+            dtg_cad_fornecedor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtg_cad_fornecedor.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dtg_cad_fornecedor.CausesValidation = false;
             dtg_cad_fornecedor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtg_cad_fornecedor.Location = new Point(17, 53);
             dtg_cad_fornecedor.Name = "dtg_cad_fornecedor";
+            dtg_cad_fornecedor.ReadOnly = true;
             dtg_cad_fornecedor.RowTemplate.Height = 25;
             dtg_cad_fornecedor.Size = new Size(659, 277);
             dtg_cad_fornecedor.TabIndex = 37;

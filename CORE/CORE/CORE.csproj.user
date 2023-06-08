@@ -7,6 +7,9 @@
     <Compile Update="Views\Fornecedor\Cad_Fornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Funcionalidades\Cryptog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Produtos\Cad_produtos.cs">
       <SubType>Form</SubType>
     </Compile>
