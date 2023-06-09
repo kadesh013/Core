@@ -49,9 +49,9 @@ namespace CORE.Views.Fornecedor
 
             Models.Fornecedor mfornecedor = new Models.Fornecedor();
             ValidacaoFornecedor vf = new ValidacaoFornecedor();
-            mfornecedor.Codigo = int.Parse(txt_codigo.Text);
-            mfornecedor.Razao_social = txt_razao_social.Text;
-            mfornecedor.Nome_fantasia = txt_nome_fantasia.Text;
+            mfornecedor.Codigo = int.Parse(txt_codigo.Text.Replace("'", ""));
+            mfornecedor.Razao_social = txt_razao_social.Text.Replace("'", "");
+            mfornecedor.Nome_fantasia = txt_nome_fantasia.Text.Replace("'", "");
             mfornecedor.Datacadastro = DateTime.Now;
             var resultados = vf.Validate(mfornecedor);
 
@@ -74,7 +74,7 @@ namespace CORE.Views.Fornecedor
                 }
                 else
                 {
-                   
+
                     mfornecedor.Inserir();
                     MessageBox.Show("Cadastrado com sucesso!");
 
@@ -93,7 +93,7 @@ namespace CORE.Views.Fornecedor
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-          
+
 
         }
 
@@ -104,7 +104,7 @@ namespace CORE.Views.Fornecedor
 
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
-           
+
             MessageBox.Show(Carrega());
         }
         public string Carrega()
@@ -121,18 +121,43 @@ namespace CORE.Views.Fornecedor
             while (dr.Read())
             {
 
-          
+
                 ar1.Add(dr.GetValue(i));
-               
+
                 MessageBox.Show(ar1[i].ToString());
                 i++;
             }
             con.Close();
             con.Dispose();
-            return acumula="";
+            return acumula = "";
 
         }
 
+        private void btn_pesquisa_Click(object sender, EventArgs e)
+        {
+            Models.Fornecedor mfornecedor = new Models.Fornecedor();
+            string sql = @"SELECT 
+                    cd_fornecedor AS 'Codigo', 
+                    nm_razao_social AS 'Razao Social',
+                    nm_fantasia AS 'Nome Fantasia' 
+
+                    FROM tb_fornecedor";
+            dtg_cad_fornecedor.DataSource = mfornecedor.PesquisaFornecedor(sql, txt_pesquisa.Text, "cd_fornecedor", "nm_razao_social");
+        }
+
+        private void txt_pesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+
+                btn_pesquisa.PerformClick();
+            }
+        }
+
+        private void txt_pesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
 

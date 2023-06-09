@@ -28,46 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            button1 = new Button();
-            panel1.SuspendLayout();
+            btn_fornecedor = new Button();
+            btn_fabricantes = new Button();
             SuspendLayout();
             // 
-            // panel1
+            // btn_fornecedor
             // 
-            panel1.BackColor = Color.Black;
-            panel1.Controls.Add(button1);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 1041);
-            panel1.TabIndex = 0;
+            btn_fornecedor.Location = new Point(21, 42);
+            btn_fornecedor.Name = "btn_fornecedor";
+            btn_fornecedor.Size = new Size(136, 62);
+            btn_fornecedor.TabIndex = 0;
+            btn_fornecedor.Text = "FORNECEDORES";
+            btn_fornecedor.UseVisualStyleBackColor = true;
+            btn_fornecedor.Click += btn_fornecedor_Click;
             // 
-            // button1
+            // btn_fabricantes
             // 
-            button1.Location = new Point(12, 21);
-            button1.Name = "button1";
-            button1.Size = new Size(167, 33);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btn_fabricantes.Location = new Point(182, 42);
+            btn_fabricantes.Name = "btn_fabricantes";
+            btn_fabricantes.Size = new Size(136, 62);
+            btn_fabricantes.TabIndex = 1;
+            btn_fabricantes.Text = "FABRICANTES";
+            btn_fabricantes.UseVisualStyleBackColor = true;
+            btn_fabricantes.Click += btn_fabricantes_Click;
             // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1904, 1041);
-            Controls.Add(panel1);
+            ClientSize = new Size(334, 127);
+            Controls.Add(btn_fabricantes);
+            Controls.Add(btn_fornecedor);
             Name = "Menu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
             Load += Menu_Load;
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Button button1;
+        private Button btn_fornecedor;
+        private Button btn_fabricantes;
     }
 }

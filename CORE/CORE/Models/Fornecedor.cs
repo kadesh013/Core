@@ -129,7 +129,14 @@ namespace CORE.Models
             return cforn.Carregadados(); 
         }
 
-     
+        public DataTable PesquisaFornecedor(String sql,String pesquisa,String argumento1,String argumento2)
+        {
+            Controllers.Fornecedor cforn = new Controllers.Fornecedor();
+
+            return cforn.PesquisarFornecedor(sql,pesquisa.Replace("'", ""), argumento1,argumento2);
+        }
+
+
 
 
     }

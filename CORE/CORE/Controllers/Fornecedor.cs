@@ -134,6 +134,28 @@ FROM tb_fornecedor;";
 
         }
 
+        public DataTable PesquisarFornecedor(String sql,String pesquisa, String argumento1,String argumento2)
+        {//SELECT nome FROM tblalunos WHERE nome LIKE "Jos%"
+
+            /*
+                     @"SELECT 
+                    cd_fornecedor AS 'Codigo', 
+                    nm_razao_social AS 'Razao Social',
+                    nm_fantasia AS 'Nome Fantasia' 
+
+                    FROM tb_fornecedor where cd_fornecedor like '"+pesquisa+"%' or " + "nm_razao_social like '"+pesquisa+"%';" 
+             */
+            sql = @sql + " where "+@argumento1+" like '"+@pesquisa+"%' or " + @argumento2 + " like '"+@pesquisa+"%'";
+            MySqlConnection con = new MySqlConnection("server=localhost;User Id=root;database=db_core; password=");
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            DataTable data = new DataTable();
+            data.Load(cmd.ExecuteReader());
+            con.Close();
+            con.Dispose();
+            return data;
+        }
+
    
 
 

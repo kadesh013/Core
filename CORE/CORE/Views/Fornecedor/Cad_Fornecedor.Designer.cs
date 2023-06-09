@@ -39,7 +39,7 @@
             label2 = new Label();
             label1 = new Label();
             dtg_cad_fornecedor = new DataGridView();
-            textBox3 = new TextBox();
+            txt_pesquisa = new TextBox();
             label3 = new Label();
             btn_pesquisa = new Button();
             label4 = new Label();
@@ -170,12 +170,14 @@
             dtg_cad_fornecedor.Size = new Size(659, 277);
             dtg_cad_fornecedor.TabIndex = 37;
             // 
-            // textBox3
+            // txt_pesquisa
             // 
-            textBox3.Location = new Point(17, 24);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(659, 23);
-            textBox3.TabIndex = 0;
+            txt_pesquisa.Location = new Point(17, 24);
+            txt_pesquisa.Name = "txt_pesquisa";
+            txt_pesquisa.Size = new Size(659, 23);
+            txt_pesquisa.TabIndex = 0;
+            txt_pesquisa.KeyDown += txt_pesquisa_KeyDown;
+            txt_pesquisa.KeyPress += txt_pesquisa_KeyPress;
             // 
             // label3
             // 
@@ -196,6 +198,7 @@
             btn_pesquisa.Size = new Size(41, 25);
             btn_pesquisa.TabIndex = 1;
             btn_pesquisa.UseVisualStyleBackColor = true;
+            btn_pesquisa.Click += btn_pesquisa_Click;
             // 
             // label4
             // 
@@ -411,6 +414,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(793, 606);
             Controls.Add(txt_telefone);
             Controls.Add(txt_contato);
@@ -439,7 +443,7 @@
             Controls.Add(label4);
             Controls.Add(btn_pesquisa);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(txt_pesquisa);
             Controls.Add(btn_cancelar);
             Controls.Add(btn_confirmar);
             Controls.Add(btn_excluir);
@@ -451,6 +455,7 @@
             Controls.Add(label1);
             Controls.Add(dtg_cad_fornecedor);
             Name = "Cad_Fornecedor";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cad_Fornecedor";
             Load += Cad_Fornecedor_Load;
             ((System.ComponentModel.ISupportInitialize)dtg_cad_fornecedor).EndInit();
@@ -470,7 +475,7 @@
         private Label label2;
         private Label label1;
         private DataGridView dtg_cad_fornecedor;
-        private TextBox textBox3;
+        private TextBox txt_pesquisa;
         private Label label3;
         private Button btn_pesquisa;
         private Label label4;
