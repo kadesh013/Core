@@ -1,162 +1,142 @@
-﻿using CORE.Views.Fornecedor;
+﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Security.Cryptography;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
-using MySqlConnector;
-using System.Data;
-using System.Runtime.Intrinsics.Arm;
 
 namespace CORE.Controllers
 {
     internal class Fornecedor
     {
-   
-      
 
 
-        /* 
-           private MySqlConnection conn;
-                static void connect()
-                {
-                    string server = "localhost";
-                    string database = "mysqldb1";
-                    string user = "root";
-                    string password = "u1s2e3r4";
-                    string port = "3306";
-                    string sslM = "none";
+        private int codigo;
+        private string razao_social;
+        private string nome_fantasia;
+        private string endereco;
+        private string numero;
+        private string cep;
+        private string cidade;
+        private string bairro;
+        private string estado;
+        private float cnpj;
+        private string ie;
+        private string isento;
+        private string contato;
+        private string telefone;
+        private DateTime datacadastro;
 
-                    string connString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
-
-                    conn = new MySqlConnection(connString);
-                    try
-                    {
-                        conn.Open();
-
-                    Messagebox.Show("Connection Successful");
-
-                        conn.Close();
-                    }
-                    catch (MySqlException e)
-                    {
-                        Messagebox.Show(e.Message + connString);
-                    }
-
-                }
-
-         */
-      /*  public void InserirDados(String itemcodigo, String itemdescricao, Double itempreco)
+        public int Codigo
         {
-            MySqlConnection con = new MySqlConnection();
-            con = new MySqlConnection();
-      
-            con.ConnectionString = 
-            String query = "INSERT INTO inventario (itemcodigo, itemdescricao, itempreco) VALUES";
-            query += "(?itemcodigo, ?itemdescricao, ?itempreco)";
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("?itemcodigo", itemcodigo);
-                cmd.Parameters.AddWithValue("?itemdescricao", itemdescricao);
-                cmd.Parameters.AddWithValue("?itempreco", itempreco);
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            }
-            finally
-            {
-                con.Close();
-            }
+            get { return codigo; }
+            set { codigo = value; }
         }
-      */
-        public void CadastrarFornecedor(int cd_fornecedor, String nm_razao_social, String nm_fantasia, DateTime dt_cadastro)
+        public string Razao_social
         {
-            MySqlConnection con = new MySqlConnection("server=localhost;User Id=root;database=db_core; password=");
-
-
-
-            String query = "INSERT INTO tb_fornecedor (cd_fornecedor, nm_razao_social, nm_fantasia,dt_cadastro ) VALUES";
-            query += "(?cd_fornecedor, ?nm_razao_social, ?nm_fantasia,?dt_cadastro)";
-            try
-            {
-                con.Open();
-             
-                MySqlCommand cmd = new MySqlCommand(query,con);
-                cmd.Parameters.AddWithValue("?cd_fornecedor", cd_fornecedor);
-                cmd.Parameters.AddWithValue("?nm_razao_social", nm_razao_social);
-                cmd.Parameters.AddWithValue("?nm_fantasia", nm_fantasia);
-                cmd.Parameters.AddWithValue("?dt_cadastro", dt_cadastro);
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-              
-            }
-            finally
-            {
-                
-            }
-
-
-
+            get { return razao_social; }
+            set { razao_social = value; }
+        }
+        public string Nome_fantasia
+        {
+            get { return nome_fantasia; }
+            set { nome_fantasia = value; }
         }
 
-        public void DeletarFornecedor()
+        public string Endereco
         {
+            get { return endereco; }
+            set { endereco = value; }
+        }
+
+        public string Numero
+        {
+            get { return numero; }
+            set { numero = value; }
+        }
+        public string Cep
+        {
+            get { return cep; }
+            set { cep = value; }
+        }
+
+        public string Cidade
+        {
+            get { return cidade; }
+            set { cidade = value; }
+        }
+
+        public string Bairro
+        {
+            get { return bairro; }
+            set { bairro = value; }
+        }
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+
+        public float Cnpj
+        {
+            get { return cnpj; }
+            set { cnpj = value; }
+        }
+
+        public string Ie
+        {
+            get { return ie; }
+            set { ie = value; }
+        }
+
+        public string Isento
+        {
+            get { return isento; }
+            set { isento = value; }
+        }
+        public string Contato
+        {
+            get { return contato; }
+            set { contato = value; }
+        }
+
+        public string Telefone
+        {
+            get { return telefone; }
+            set { telefone = value; }
+        }
+
+        public DateTime Datacadastro
+        {
+            get { return datacadastro; }
+            set { datacadastro = value; }
+        }
+
+
+        public void Inserir()
+        {
+            Models.Fornecedor mforn = new Models.Fornecedor();
+            mforn.CadastrarFornecedor(Codigo, Razao_social, Nome_fantasia, Datacadastro);
 
         }
 
-        public void EditarFornecedor()
-        {
-
-        }
-
-        public void GetFornecedor()
-        {
-
-        }
         public DataTable Carregadados()
         {
-            string sql = @"SELECT 
-cd_fornecedor AS 'Codigo', 
-nm_razao_social AS 'Razao Social',
-nm_fantasia AS 'Nome Fantasia' 
+            Models.Fornecedor mforn = new Models.Fornecedor();
 
-FROM tb_fornecedor;";
-            MySqlConnection con = new MySqlConnection("server=localhost;User Id=root;database=db_core; password=");
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            DataTable data = new DataTable();
-            data.Load(cmd.ExecuteReader());
-            con.Close();
-            con.Dispose();
-            return data;
-
+            return mforn.Carregadados();
         }
 
-        public DataTable PesquisarFornecedor(String sql,String pesquisa, String argumento1,String argumento2)
-        {//SELECT nome FROM tblalunos WHERE nome LIKE "Jos%"
+        public DataTable PesquisaFornecedor(string sql, string pesquisa, string argumento1, string argumento2)
+        {
+            Models.Fornecedor mforn = new Models.Fornecedor();
 
-            /*
-                     @"SELECT 
-                    cd_fornecedor AS 'Codigo', 
-                    nm_razao_social AS 'Razao Social',
-                    nm_fantasia AS 'Nome Fantasia' 
-
-                    FROM tb_fornecedor where cd_fornecedor like '"+pesquisa+"%' or " + "nm_razao_social like '"+pesquisa+"%';" 
-             */
-            sql = @sql + " where "+@argumento1+" like '"+@pesquisa+"%' or " + @argumento2 + " like '"+@pesquisa+"%'";
-            MySqlConnection con = new MySqlConnection("server=localhost;User Id=root;database=db_core; password=");
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            DataTable data = new DataTable();
-            data.Load(cmd.ExecuteReader());
-            con.Close();
-            con.Dispose();
-            return data;
+            return mforn.PesquisarFornecedor(sql, pesquisa.Replace("'", ""), argumento1, argumento2);
         }
 
-   
+
 
 
     }

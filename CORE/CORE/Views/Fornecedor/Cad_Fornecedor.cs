@@ -1,5 +1,4 @@
 ﻿using CORE.Controllers;
-using CORE.Models;
 using FluentValidation.TestHelper;
 using MySqlConnector;
 using System;
@@ -18,7 +17,7 @@ namespace CORE.Views.Fornecedor
 {
     public partial class Cad_Fornecedor : Form
     {
-        Models.Fornecedor forn = new Models.Fornecedor();
+        Controllers.Fornecedor forn = new Controllers.Fornecedor();
 
         public Cad_Fornecedor()
         {
@@ -47,7 +46,7 @@ namespace CORE.Views.Fornecedor
         private void btn_adicionar_Click(object sender, EventArgs e)
         {
 
-            Models.Fornecedor mfornecedor = new Models.Fornecedor();
+            Controllers.Fornecedor mfornecedor = new Controllers.Fornecedor();
             ValidacaoFornecedor vf = new ValidacaoFornecedor();
             mfornecedor.Codigo = int.Parse(txt_codigo.Text.Replace("'", ""));
             mfornecedor.Razao_social = txt_razao_social.Text.Replace("'", "");
@@ -135,7 +134,7 @@ namespace CORE.Views.Fornecedor
 
         private void btn_pesquisa_Click(object sender, EventArgs e)
         {
-            Models.Fornecedor mfornecedor = new Models.Fornecedor();
+            Controllers.Fornecedor mfornecedor = new Controllers.Fornecedor();
             string sql = @"SELECT 
                     cd_fornecedor AS 'Codigo', 
                     nm_razao_social AS 'Razao Social',

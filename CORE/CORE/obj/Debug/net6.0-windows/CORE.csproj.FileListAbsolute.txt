@@ -73,3 +73,4 @@ C:\Users\Paulo\source\repos\CORE\Core\CORE\CORE\obj\Debug\net6.0-windows\ref\COR
 C:\Users\ALPER\Desktop\Core\Core\CORE\CORE\obj\Debug\net6.0-windows\CORE.Views.Funcionalidades.Cryptog.resources
 C:\Users\Paulo\source\repos\CORE\Core\CORE\CORE\obj\Debug\net6.0-windows\CORE.Views.Funcionalidades.Cryptog.resources
 C:\Users\Paulo\source\repos\CORE\Core\CORE\CORE\obj\Debug\net6.0-windows\CORE.Views.Frm_Login.resources
+C:\Users\ALPER\Desktop\Core\Core\CORE\CORE\obj\Debug\net6.0-windows\CORE.Views.Frm_Login.resources

@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualBasic.Logging;
+﻿using CORE.Controllers;
+using CORE.Models;
+using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +22,7 @@ namespace CORE.Views
 
         private void btn_logar_Click(object sender, EventArgs e)
         {
-            Models.Login log = new Models.Login();
+            Controllers.Login log = new Controllers.Login();
             log.Username = txt_user.Text;
             log.Password = txt_password.Text;
 
